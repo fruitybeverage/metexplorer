@@ -89,4 +89,4 @@ To build the application on macOS using py2app, follow these steps:
 ## Application Bundle Location
 A zipped version of the application exists here:
     
-https://drive.google.com/drive/folders/1PM3F9SExKv8ai-MZY9o1z0s27UCYLxdt?usp=sharing
+https://drive.google.com/file/d/1SvNkixs44rysY3lv3QADHo8dzs78pzif/view?usp=sharing

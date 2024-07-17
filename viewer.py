@@ -1,5 +1,6 @@
 import requests
-from urllib.parse import urlparse
+from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QPixmap, QImage
 from PySide6.QtWidgets import (
     QLabel,
     QHBoxLayout,
@@ -8,10 +9,8 @@ from PySide6.QtWidgets import (
     QMainWindow,
     QSizePolicy,
     QPushButton,
-    QFileDialog,
 )
-from PySide6.QtGui import QPixmap, QImage
-from PySide6.QtCore import Qt, Signal
+
 import config
 import utils
 

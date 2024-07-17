@@ -1,3 +1,5 @@
+import requests
+from PySide6.QtCore import Qt, Slot
 from PySide6.QtGui import QPixmap, QAction, QImage
 from PySide6.QtWidgets import (
     QWidget,
@@ -11,13 +13,12 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QMenu,
 )
-from PySide6.QtCore import Qt, Slot
-from fetch import FetchDataThread
-from downloader import ImageDownloaderThread
-from viewer import FullImageViewer
-import requests
+
 import config
 import utils
+from downloader import ImageDownloaderThread
+from fetch import FetchDataThread
+from viewer import FullImageViewer
 
 
 class App(QWidget):
@@ -56,7 +57,8 @@ class App(QWidget):
         self.setLayout(layout)
 
     def create_form_layout(self):
-        """Creates the layout for user search input including search field, classification dropdown, image requirement and date sorting option."""
+        """Creates the layout for user search input including search field,
+         classification dropdown, image requirement and date sorting option."""
         form_layout = QHBoxLayout()
 
         # Search field

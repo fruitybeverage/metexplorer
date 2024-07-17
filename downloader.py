@@ -1,7 +1,8 @@
 import requests
 from PySide6.QtCore import QThread, Signal
-from PySide6.QtGui import QPixmap, QImage
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QPixmap, QImage
+
 import config
 
 

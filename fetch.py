@@ -1,6 +1,7 @@
+from concurrent.futures import as_completed, ThreadPoolExecutor
+
 import requests
 from PySide6.QtCore import QThread, Signal
-from concurrent.futures import as_completed, ThreadPoolExecutor
 
 import config
 

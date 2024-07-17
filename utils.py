@@ -1,9 +1,11 @@
-from PySide6.QtWidgets import QLabel, QFrame, QHBoxLayout, QSizePolicy, QFileDialog
-from PySide6.QtCore import Qt
-import config
 import os
-from urllib.parse import urlparse
 import webbrowser
+from urllib.parse import urlparse
+
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QLabel, QFrame, QHBoxLayout, QSizePolicy, QFileDialog
+
+import config
 
 
 def clear_layout(layout):

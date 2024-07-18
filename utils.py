@@ -15,6 +15,9 @@ def clear_layout(layout):
         if child.widget():
             child.widget().deleteLater()
 
+def get_art_info(data, field, default="Unknown"):
+    """Retrieve artwork information."""
+    return data.get(field, default) or default
 
 def create_result_frame(data, parent):
     """Creates a layout for search results."""
@@ -24,11 +27,11 @@ def create_result_frame(data, parent):
 
     # Work description
     text = (
-        f"Title: {data.get('title', 'N/A')}\n"
-        f"Artist: {data.get('artistDisplayName', 'N/A')}\n"
-        f"Date: {data.get('objectDate', 'N/A')}\n"
-        f"Medium: {data.get('medium', 'N/A')}\n"
-        f"Classification: {data.get('classification', 'N/A')}\n"
+        f"Title: {get_art_info(data, 'title')}\n"
+        f"Artist: {get_art_info(data, 'artistDisplayName')}\n"
+        f"Date: {get_art_info(data, 'objectDate')}\n"
+        f"Medium: {get_art_info(data, 'medium')}\n"
+        f"Classification: {get_art_info(data, 'classification')}\n"
     )
     label = QLabel(text)
     label.setWordWrap(True)

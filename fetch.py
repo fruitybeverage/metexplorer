@@ -1,7 +1,6 @@
-from concurrent.futures import as_completed, ThreadPoolExecutor
-
 import requests
 from PySide6.QtCore import QThread, Signal
+from concurrent.futures import as_completed, ThreadPoolExecutor
 
 import config
 
@@ -32,12 +31,14 @@ class FetchDataThread(QThread):
         if self.has_images:
             params = {
                 "hasImages": str(self.has_images).lower(),
-                "q": self.query,
             }
         else:
-            params = {
-                "q": self.query,
-            }
+            params = {}
+
+        if self.query:
+            params["q"] = self.query
+        else:
+            params["q"] = self.classification
 
         response = requests.get(f"{config.API_URL}/search", params=params)
         if response.status_code == 200 and self._is_running:

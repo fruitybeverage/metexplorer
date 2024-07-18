@@ -58,7 +58,7 @@ class App(QWidget):
 
     def create_form_layout(self):
         """Creates the layout for user search input including search field,
-         classification dropdown, image requirement and date sorting option."""
+        classification dropdown, image requirement and date sorting option."""
         form_layout = QHBoxLayout()
 
         # Search field
@@ -217,7 +217,7 @@ class App(QWidget):
     def download_image(
         self, url, layout, loading_label, full_image_url, object_url=None
     ):
-        """Starts a image download thread for every result entry."""
+        """Starts an image download thread for every result entry."""
         image_thread = ImageDownloaderThread(url, layout, loading_label)
         image_thread.image_ready.connect(
             lambda pixmap, l=layout: self.add_image(
@@ -258,12 +258,12 @@ class App(QWidget):
         layout.addWidget(error_label, alignment=Qt.AlignRight)
 
     def closeEvent(self, event):
-        """Close application and terminates all threads."""
+        """Close application and terminate all threads."""
         self.terminate_threads()
         super().closeEvent(event)
 
     def show_full_image(self, image_url, object_url=None):
-        """Opens a new window to display the full sized image"""
+        """Opens a new window to display the full sized image."""
         # Opens a new image viewer with full size image.
         if not self.full_image_viewer:
             self.full_image_viewer = FullImageViewer(image_url, object_url)
